@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- include all drivers -->
+
+  <include file="$(find final_year_project)/launch/b21/launch/laser.launch" />
+  <include file="$(find final_year_project)/launch/b21/launch/rflex.launch" />
+  <include file="$(find final_year_project)/launch/b21/launch/tf.launch" />
+  <include file="$(find final_year_project)/launch/b21/launch/joystick.launch" />
+
+</launch>

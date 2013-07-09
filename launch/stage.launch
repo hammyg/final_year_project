@@ -1,0 +1,6 @@
+<launch>
+
+  <!-- stage -->
+  <node pkg="stage" type="stageros" name="stage" output="screen" args="$(find final_year_project)/maps/lgfloor.world" />
+
+</launch>

@@ -1,0 +1,22 @@
+## publish ptu continously:
+
+rostopic pub -r 10 /ptu/cmd sensor_msgs/JointState '{ header: {}, name: ['pan', 'tilt'], position: [0.5, 0.5], velocity: [3, 3]}'
+
+
+The following items need to be run:
+roscore
+*b21 fix1: rosrun rflex b21 _port:=/dev/ttyR5
+*b21 fix2: jpnevulator --ascii --timing-print --tty /dev/ttyR5 --read
+(Run fix 1 and 2, then close 1 then 2)
+
+b21.launch
+ptu.launch
+kinect_ptu.launch
+lab_map_amcl.launch/lgfloor_map_amcl.launch/lgfloor2_map_amcl.launch
+navigation.launch
+./run main.LaserCombiner
+./run main.KinectPersonSelector
+./run main.RVizPublisher
+./run main.NeuralNetwork
+./run main.FSM
+

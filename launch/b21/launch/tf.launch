@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- tf transforms -->
+  <param name="robot_description" textfile="$(find final_year_project)/launch/b21/b21.urdf" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <rosparam param="source_list">[ptu/state]</rosparam>
+  </node>
+  <node pkg="robot_state_publisher" name="robot_state_publisher" type="state_publisher" />
+
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+
+  <!-- map server -->
+  <node pkg="map_server" type="map_server" name="mapserver" required="true" output="screen" args="$(find final_year_project)/maps/lgfloor/map.yaml" />
+
+  <!-- amcl -->
+  <include file="$(find final_year_project)/launch/amcl.launch" respawn="true" />
+
+</launch>
