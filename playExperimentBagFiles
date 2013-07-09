@@ -1,0 +1,11 @@
+#!/bin/bash
+#Plays back each bag file in current directory
+function rosBagPlayAll {
+	for f in *.bag
+	do
+		echo "Playing: $f"
+		rosbag play -r 0.7 $f
+	done
+}
+
+cd ~/ros_workspace/final_year_project/bag_files/experimentBagFiles/leftPointing && echo "Playing left pointing" && rosBagPlayAll && cd ../rightPointing && echo "Playing right pointing" && rosBagPlayAll && cd ../notPointing && echo "Playing not pointing" && rosBagPlayAll 
