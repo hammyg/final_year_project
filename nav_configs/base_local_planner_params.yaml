@@ -1,0 +1,19 @@
+# The first section of parameters above define the velocity limits of the robot. The second section defines the acceleration limits of the robot.
+
+TrajectoryPlannerROS:
+  max_vel_x: 0.3
+  min_vel_x: 0.05
+  max_rotational_vel: 0.3
+  min_in_place_rotational_vel: 0.3
+
+  acc_lim_th: 1
+  acc_lim_x: 1
+  acc_lim_y: 1
+
+  yaw_goal_tolerance: 0.05
+  xy_goal_tolerance: 0.10
+
+  occdist_scale: 0.05
+
+  holonomic_robot: false
+  oscilliation_timeout: 5.0
