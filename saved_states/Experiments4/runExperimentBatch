@@ -1,0 +1,13 @@
+#!/bin/bash
+export IFS=";"
+#Completed 5;10;20;30;60;120;10-5;20-10;30-15;60-30;80-40;100-50;120-60;20-10-5;40-20-10;60-30-15;
+#|       1 layer            |                2 layers                  |
+neuralNetworks="120-60-30;40-20-10-5;80-40-20-10;120-60-30-15"
+#        3 laye          |           4 layers
+for word in $neuralNetworks; do
+  echo "Starting $word experiment"
+  ./runExperiment $word
+  echo "Completed $word experiment"
+done
+
+echo "Completed all experiments!"

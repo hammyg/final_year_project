@@ -1,0 +1,22 @@
+#!/bin/bash
+#expecting one argument in the format of 40-20-10
+
+#write to param file
+echo "t $1.nn $1 $1.TrainingError.csv" > params.txt
+
+#start node
+cd ../../ && ./run main.NeuralNetwork
+
+#write to param file
+echo "c $1.nn $1.ClassificationResults.csv" > ./saved_states/Experiments4/params.txt
+
+#start node in background
+./run main.NeuralNetwork&
+
+#wait for node to start before running bag files
+sleep 7
+
+#play bag files
+./playExperimentBagFiles
+
+echo "Completed experiment for $1"
